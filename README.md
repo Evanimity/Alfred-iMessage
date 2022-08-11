@@ -5,7 +5,6 @@ Get Verification / 2FA code from iMessage
 
 ## Requirement
 - Python3 (Normally pre-installed on Mac. If not, please use `brew` to reinstall)
-- Nothing else
 
 ## Usage
 
@@ -26,7 +25,7 @@ Get Verification / 2FA code from iMessage
 
 ## Config
 ### Config File
-You may put codes (as `string` type) in 'IGNORE' to deliberately ignore those from parsing.
+Config File is located at `Source/conf.json`. You may put codes (as `string` type) in 'IGNORE' to deliberately ignore those from parsing.
 ```json
 {
     "IGNORE": [
