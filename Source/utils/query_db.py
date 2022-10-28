@@ -54,6 +54,7 @@ class QueryDB:
 
     def parse_result(self):
         for row in self._query_db():
-            codes = set(re.findall(r'\d{%s,}' % self.digits, row[0])).difference(self.ignore_set)
-            for code in codes:
-                self.wf.add_item(title=code, subtitle=row[0], arg=code, icon='item.png', copytext=code, valid=True, largetext=f'[From] {row[2]}\n[To] {row[4]}\n[Type] {row[3]}\n[Content] {row[0]}')
+            if row[0]:
+                codes = set(re.findall(r'\d{%s,}' % self.digits, row[0])).difference(self.ignore_set)
+                for code in codes:
+                    self.wf.add_item(title=code, subtitle=row[0], arg=code, icon='item.png', copytext=code, valid=True, largetext=f'[From] {row[2]}\n[To] {row[4]}\n[Type] {row[3]}\n[Content] {row[0]}')
